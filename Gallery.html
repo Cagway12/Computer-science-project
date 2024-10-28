@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+            color: #e7e7e7;
+        }
+
+        /* Grid layout for the photo gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* How the grid is arranged.*/
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.5s ease; /* Time it takes for the transition to occur*/
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2); /* How big the photos look during the transition*/
+        }
+
+        /* Back to home link */
+        .back-link {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Photo Gallery</h1>
+
+    <!-- Photo gallery section -->
+    <div class="gallery">
+        <img src="Chalbi-Desert-kenyan-backpacker-1.jpg">
+        <img src="nairobi-worlds-best-city-to-visit.jpg.webp">
+        <img src="Coastal-Kenya.jpg" alt="Image 3">
+        <img src="GettyImages-1249566598-70e4aa8ff44a452eb57f94f1cbd45bcc.webp">
+        <img src="featured-Lake-Nakuru-NP_F.jpg">
+        <img src="kilifi.jpg">
+   
+    </div>
+
+    <!-- Link back to main page -->
+    <a href="KaribuKenya.html" class="back-link">Back to Home</a>
+
+</body>
+</html>

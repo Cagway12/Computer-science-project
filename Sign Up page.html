@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Themed Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Masaai.jpg');
+            background-size: auto;
+            background-position: center;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #ffffff5c;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+        h1 {
+            color: #008000; /* Green color inspired by the Kenyan flag */
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #ff0000; /* Red color inspired by the Kenyan flag */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #e60000;
+        }
+    </style>
+    
+    <!-- Firebase SDK --> 
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script> 
+
+    <script> 
+        // Firebase configuration
+        var firebaseConfig = { 
+            apiKey: "AIzaSyCsHvWvrqdiPqF63p6fn8sVPcyYGLULEz4",
+            authDomain: "compsciproject-4f9ba.firebaseapp.com",
+            databaseURL: "https://compsciproject-4f9ba-default-rtdb.firebaseio.com",
+            projectId: "compsciproject-4f9ba",
+            storageBucket: "compsciproject-4f9ba.appspot.com",
+            messagingSenderId: "532782788263",
+            appId: "1:532782788263:web:a45c6f4ffa662b27f73582",
+            measurementId: "G-S2HXKDN42C"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Reference to the Realtime Database
+        var database = firebase.database();
+
+        // Function to submit data to Firebase
+        function submitContactForm(event) { 
+            event.preventDefault(); // Prevent the form from refreshing the page 
+            var fullname = document.getElementById("fullname").value; 
+            var email = document.getElementById("email").value; 
+
+            // Save data to Firebase 
+            database.ref('contacts').push({ 
+                name: fullname, 
+                email: email 
+            }).then(function() { 
+                alert("Thank you for submitting!"); 
+            }).catch(function(error) { 
+                alert("Error: " + error.message); 
+            }); 
+
+            // Clear the form fields 
+            document.getElementById("contactForm").reset(); 
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Join Our Community!</h1>
+        <form id="contactForm" action="#" method="post" onsubmit="submitContactForm(event)">
+            <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="KaribuKenya.html">Go to Homepage</a> 
+    </div>
+</body>
+</html>
