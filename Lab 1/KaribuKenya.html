@@ -27,42 +27,53 @@
             padding-top: 0; 
         }
 
-        /* Navigation bar */
-        nav {
-            position: fixed; 
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); 
-            z-index: 10; 
-        }
+/* Navigation bar */
+nav {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 40px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 10;
+    box-sizing: border-box; 
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-        }
+nav .logo {
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+}
 
-        nav ul li {
-            display: inline;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; 
+    justify-content: flex-end; /* Aligns items to the right */
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
+nav ul li {
+    display: inline;
+}
 
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 
         /* Main content area with title */
         .hero h1 {
@@ -113,7 +124,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Discover Kenya, One Journey at a Time!</h1>
-        <p>Kenya is a natural wonder, hosting the Great Migration, where millions of animals move across the Maasai Mara, and it’s one of the few places to see Africa’s Big Five – lions, leopards, elephants, buffalo, and rhinos – in their natural habitats. The landscapes are equally stunning, from Mount Kenya’s peaks to golden savannas and beautiful coastal beaches. Check out the **gallery** for photos capturing Kenya’s incredible wildlife, scenery, and culture.</p>
+        <p>Kenya is a natural wonder, hosting the Great Migration, where millions of animals move across the Maasai Mara, and it’s one of the few places to see Africa’s Big Five – lions, leopards, elephants, buffalo, and rhinos – in their natural habitats. The landscapes are equally stunning, from Mount Kenya’s peaks to golden savannas and beautiful coastal beaches. Check out the gallery for photos capturing Kenya’s incredible wildlife, scenery, and culture.</p>
     </section>
 
 </body>
